@@ -1,0 +1,104 @@
+<!-- HALAMAN 4: PRIORITAS -->
+<div class="page" style="padding: 25mm 25mm;">
+
+    <h2 style="font-size: 16pt; font-weight: 700; color: #1e3a5f; margin-bottom: 8px;">
+        <span style="color: #10b981;">5.</span> Prioritas Penanganan
+    </h2>
+    <p style="font-size: 10pt; color: #64748b; margin-bottom: 25px;">Urutan tindakan berdasarkan tingkat urgensi dan
+        dampak finansial</p>
+
+    {{#if criticalIssues.length}}
+    <!-- Critical Issues -->
+    <div style="margin-bottom: 25px;">
+        <div
+            style="display: flex; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #ef4444;">
+            <span
+                style="background: #ef4444; color: white; font-size: 9pt; font-weight: 700; padding: 5px 12px; border-radius: 4px; margin-right: 12px;">KRITIS</span>
+            <span style="font-size: 10pt; color: #64748b;">Harus ditangani dalam 30 hari</span>
+        </div>
+
+        {{#each criticalIssues}}
+        <div style="display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
+            <div
+                style="width: 26px; height: 26px; background: #ef4444; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11pt; font-weight: 600; flex-shrink: 0; margin-right: 12px;">
+                {{this.rank}}</div>
+            <div style="flex: 1;">
+                <div style="font-size: 11pt; font-weight: 600; color: #1e3a5f; margin-bottom: 3px;">{{this.issue}}</div>
+                {{#if this.shortExplanation}}<div style="font-size: 9pt; color: #64748b;">{{this.shortExplanation}}
+                </div>{{/if}}
+            </div>
+            {{#if this.financialImpact}}<div
+                style="font-size: 11pt; font-weight: 700; color: #ef4444; white-space: nowrap; margin-left: 15px;">
+                {{formatRupiah this.financialImpact}}</div>{{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if importantIssues.length}}
+    <!-- Important Issues -->
+    <div style="margin-bottom: 25px;">
+        <div
+            style="display: flex; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #f59e0b;">
+            <span
+                style="background: #f59e0b; color: white; font-size: 9pt; font-weight: 700; padding: 5px 12px; border-radius: 4px; margin-right: 12px;">PENTING</span>
+            <span style="font-size: 10pt; color: #64748b;">Selesaikan dalam 3-6 bulan</span>
+        </div>
+
+        {{#each importantIssues}}
+        <div style="display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
+            <div
+                style="width: 26px; height: 26px; background: #f59e0b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11pt; font-weight: 600; flex-shrink: 0; margin-right: 12px;">
+                {{this.rank}}</div>
+            <div style="flex: 1;">
+                <div style="font-size: 11pt; font-weight: 600; color: #1e3a5f; margin-bottom: 3px;">{{this.issue}}</div>
+                {{#if this.shortExplanation}}<div style="font-size: 9pt; color: #64748b;">{{this.shortExplanation}}
+                </div>{{/if}}
+            </div>
+            {{#if this.financialImpact}}<div
+                style="font-size: 11pt; font-weight: 700; color: #f59e0b; white-space: nowrap; margin-left: 15px;">
+                {{formatRupiah this.financialImpact}}</div>{{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if optimizationIssues.length}}
+    <!-- Optimization Issues -->
+    <div style="margin-bottom: 25px;">
+        <div
+            style="display: flex; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #3b82f6;">
+            <span
+                style="background: #3b82f6; color: white; font-size: 9pt; font-weight: 700; padding: 5px 12px; border-radius: 4px; margin-right: 12px;">OPTIMISASI</span>
+            <span style="font-size: 10pt; color: #64748b;">Untuk peningkatan setelah fondasi stabil</span>
+        </div>
+
+        {{#each optimizationIssues}}
+        <div style="display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
+            <div
+                style="width: 26px; height: 26px; background: #3b82f6; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11pt; font-weight: 600; flex-shrink: 0; margin-right: 12px;">
+                {{this.rank}}</div>
+            <div style="flex: 1;">
+                <div style="font-size: 11pt; font-weight: 600; color: #1e3a5f; margin-bottom: 3px;">{{this.issue}}</div>
+                {{#if this.shortExplanation}}<div style="font-size: 9pt; color: #64748b;">{{this.shortExplanation}}
+                </div>{{/if}}
+            </div>
+            {{#if this.financialImpact}}<div
+                style="font-size: 11pt; font-weight: 700; color: #3b82f6; white-space: nowrap; margin-left: 15px;">
+                {{formatRupiah this.financialImpact}}</div>{{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    <!-- Footer -->
+    <div
+        style="position: absolute; bottom: 20mm; left: 25mm; right: 25mm; display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #e2e8f0;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 28px; height: 28px; background: #10b981; border-radius: 50%;"></div>
+            <span style="font-size: 9pt; color: #64748b;">Laporan dibuat dengan <strong
+                    style="color: #10b981;">YouthFinance</strong></span>
+        </div>
+        <span style="font-size: 9pt; color: #94a3b8;">Halaman 4</span>
+    </div>
+</div>

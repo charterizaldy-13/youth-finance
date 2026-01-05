@@ -1,0 +1,159 @@
+<!-- HALAMAN 7: KESIMPULAN ADVISOR -->
+<div class="page" style="display: flex; min-height: 297mm;">
+    <!-- Sidebar -->
+    <div style="width: 150px; background: #1a2332; padding: 22px 18px; flex-shrink: 0;">
+        <div
+            style="display: inline-block; background: #243044; padding: 6px 10px; border-radius: 5px; font-size: 9pt; font-weight: 600; color: white; margin-bottom: 25px;">
+            Youth<span style="color: #10b981;">Finance</span></div>
+        <div
+            style="width: 40px; height: 40px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: 700; color: white; margin-bottom: 12px;">
+            6</div>
+        <div style="font-size: 18pt; font-weight: 800; color: white; line-height: 1.2;">Kesimpulan Advisor</div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 22px 25px; background: white; position: relative;">
+        <div style="position: absolute; top: 12px; right: 22px; font-size: 9pt; color: #94a3b8;">Youth <span
+                style="color: #10b981;">Finance</span></div>
+
+        <!-- Section Header -->
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 18px;">
+            <span style="font-size: 14px;">📋</span>
+            <h2 style="font-size: 12pt; font-weight: 700; color: #1e293b;">Kesimpulan Advisor</h2>
+        </div>
+
+        <!-- Main Conclusion Card -->
+        <div
+            style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 18px;">
+            <div style="font-size: 11pt; font-weight: 600; color: #1e293b; margin-bottom: 12px;">Kepada {{userName}},
+            </div>
+
+            <p style="font-size: 9pt; color: #64748b; line-height: 1.7; margin-bottom: 18px;">
+                Berdasarkan analisis komprehensif kondisi keuangan Anda, dengan pendapatan {{formatRupiah
+                monthlyIncome}}/bulan dan
+                kekayaan bersih {{formatRupiah netWorth}}, kondisi finansial Anda mendapat nilai <strong
+                    style="color: #10b981;">{{healthGrade}}</strong>.
+            </p>
+
+            <!-- Rekomendasi Prioritas -->
+            <div style="margin-bottom: 18px;">
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 10px;">
+                    <span style="font-size: 12px; color: #ef4444;">⊕</span>
+                    <span style="font-size: 10pt; font-weight: 700; color: #ef4444;">Rekomendasi Prioritas</span>
+                </div>
+
+                {{#if strategies.[0]}}
+                <div style="font-size: 9pt; color: #64748b; line-height: 1.6;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 6px;">
+                        <span
+                            style="width: 18px; height: 18px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8pt; font-weight: 600; color: #94a3b8; margin-right: 8px; flex-shrink: 0;">1</span>
+                        Langkah pertama yang harus Anda ambil adalah: <strong
+                            style="color: #1e293b;">{{strategies.[0].strategyName}}</strong>.
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 6px;">
+                        <span
+                            style="width: 18px; height: 18px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8pt; font-weight: 600; color: #94a3b8; margin-right: 8px; flex-shrink: 0;">2</span>
+                        Target: {{strategies.[0].objective}}
+                    </div>
+                    <div style="display: flex; align-items: flex-start;">
+                        <span
+                            style="width: 18px; height: 18px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8pt; font-weight: 600; color: #94a3b8; margin-right: 8px; flex-shrink: 0;">3</span>
+                        Timeframe: {{strategies.[0].timeframe}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+
+            <!-- Aspek Positif -->
+            <div style="background: #d1fae5; border-radius: 8px; padding: 14px; margin-bottom: 18px;">
+                <div style="display: flex; align-items: flex-start; gap: 8px;">
+                    <span style="font-size: 14px; color: #059669;">✓</span>
+                    <div>
+                        <strong style="color: #059669; font-size: 9pt;">Aspek Positif</strong>
+                        <p style="font-size: 9pt; color: #065f46; line-height: 1.6; margin-top: 6px;">
+                            {{#if (gt surplus 0)}}
+                            Anda memiliki cashflow positif {{formatRupiah surplus}}/bulan. Ini adalah modal yang baik
+                            untuk memperbaiki kondisi keuangan.
+                            Kunci keberhasilan adalah disiplin mengalokasikan surplus ini sesuai prioritas.
+                            {{else}}
+                            Dengan analisis yang tepat, Anda sudah mengambil langkah pertama menuju kesehatan finansial
+                            yang lebih baik.
+                            {{/if}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Langkah Selanjutnya -->
+            <div style="margin-bottom: 18px;">
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 10px;">
+                    <span style="font-size: 12px; color: #10b981;">→</span>
+                    <span style="font-size: 10pt; font-weight: 700; color: #10b981;">Langkah Selanjutnya</span>
+                </div>
+
+                <div style="font-size: 9pt; color: #64748b; line-height: 1.6;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 6px;">
+                        <span
+                            style="width: 18px; height: 18px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8pt; font-weight: 600; color: #94a3b8; margin-right: 8px; flex-shrink: 0;">1</span>
+                        {{#if actionPlan.shortTerm.[0]}}Dalam 7 hari: {{actionPlan.shortTerm.[0].action}}{{else}}Set up
+                        sistem tracking pengeluaran{{/if}}
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 6px;">
+                        <span
+                            style="width: 18px; height: 18px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8pt; font-weight: 600; color: #94a3b8; margin-right: 8px; flex-shrink: 0;">2</span>
+                        Review progress setiap bulan dan sesuaikan strategi jika diperlukan
+                    </div>
+                    <div style="display: flex; align-items: flex-start;">
+                        <span
+                            style="width: 18px; height: 18px; background: #f8fafc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8pt; font-weight: 600; color: #94a3b8; margin-right: 8px; flex-shrink: 0;">3</span>
+                        Gunakan laporan ini sebagai panduan dalam keputusan keuangan
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div style="border-left: 3px solid #10b981; padding-left: 14px; margin-bottom: 18px;">
+                <p style="font-size: 8pt; color: #f59e0b; font-weight: 600; margin-bottom: 4px;">💡 Ingat:</p>
+                <p style="font-size: 9pt; color: #64748b; font-style: italic; line-height: 1.5;">
+                    "Perjalanan menuju kebebasan finansial adalah maraton, bukan sprint. Yang penting adalah konsistensi
+                    dan
+                    disiplin dalam menjalankan rencana ini."
+                </p>
+            </div>
+
+            <!-- Signature -->
+            <div
+                style="display: flex; align-items: center; gap: 10px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+                <div
+                    style="width: 36px; height: 36px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 14px; color: white;">👤</span>
+                </div>
+                <div>
+                    <div style="font-size: 8pt; color: #94a3b8;">Salam hangat,</div>
+                    <div style="font-size: 10pt; font-weight: 700; color: #10b981;">AI Financial Advisor</div>
+                    <div style="font-size: 8pt; color: #94a3b8;">YouthFinance</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div style="background: #f8fafc; border-radius: 8px; padding: 14px;">
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                <span style="font-size: 12px; color: #f59e0b;">⚠</span>
+                <span style="font-size: 9pt; font-weight: 600; color: #1e293b;">Disclaimer</span>
+            </div>
+            <p style="font-size: 8pt; color: #64748b; line-height: 1.5;">
+                Laporan ini bersifat edukatif dan bukan pengganti konsultasi keuangan profesional. Semua rekomendasi
+                disusun berdasarkan data yang Anda
+                berikan dan analisis algoritma. Untuk keputusan keuangan besar, silakan konsultasikan dengan perencana
+                keuangan bersertifikat.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div
+            style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 8pt; color: #94a3b8;">
+            Youth<span style="color: #10b981;">Finance</span> - Halaman 7 dari {{totalPages}}
+        </div>
+    </div>
+</div>

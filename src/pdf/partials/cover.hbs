@@ -1,0 +1,207 @@
+<!-- HALAMAN 1: COVER / EXECUTIVE SUMMARY -->
+<div class="page">
+    <!-- Dark Header -->
+    <div style="background: #1a2332; padding: 25px 30px; text-align: center;">
+        <div style="display: inline-block; font-size: 12pt; font-weight: 600; color: white; margin-bottom: 15px;">
+            Youth<span style="color: #10b981;">Finance</span></div>
+        <h1 style="font-size: 24pt; font-weight: 800; color: white; margin-bottom: 6px;">Laporan Perencanaan Keuangan
+        </h1>
+        <p style="font-size: 10pt; color: rgba(255,255,255,0.7);">Disusun Berdasarkan Keuangan Anda</p>
+    </div>
+
+    <!-- Content Section -->
+    <div style="padding: 20px 30px; background: white;">
+        <!-- Greeting Box -->
+        <div style="background: #243044; border-radius: 10px; padding: 18px 22px; margin-bottom: 18px;">
+            <h2 style="font-size: 18pt; font-weight: 700; color: white; margin-bottom: 4px;">Halo, {{userName}}!</h2>
+            <p style="font-size: 9pt; color: rgba(255,255,255,0.7);">Berikut ringkasan kesehatan finansial Anda.</p>
+        </div>
+
+        <!-- Condition Box -->
+        <div
+            style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px; display: flex; gap: 18px; margin-bottom: 18px;">
+            <!-- Grade Badge -->
+            <div
+                style="width: 55px; height: 55px; background: #10b981; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;">
+                <span style="font-size: 24pt; font-weight: 800; color: white; line-height: 1;">{{healthGrade}}</span>
+                <span style="font-size: 6pt; color: rgba(255,255,255,0.8);">{{gradeText healthGrade}}</span>
+            </div>
+            <div style="flex: 1;">
+                <h3 style="font-size: 12pt; font-weight: 700; color: #1e293b; margin-bottom: 6px;">Kondisi Keuangan Anda
+                </h3>
+                <p style="font-size: 9pt; color: #64748b; line-height: 1.5; margin-bottom: 10px;">
+                    Berdasarkan analisis komprehensif, kondisi finansial berada pada level <strong
+                        style="color: #10b981;">{{healthGrade}} ({{gradeText healthGrade}})</strong>.
+                    Fokus utama: <strong style="color: #10b981;">{{#if
+                        strategies.[0]}}{{strategies.[0].strategyName}}{{else}}Membangun Fondasi{{/if}}</strong>.
+                </p>
+                <div style="display: flex; gap: 20px;">
+                    <span style="font-size: 8pt; color: #94a3b8;">Pendapatan: <strong
+                            style="color: #10b981;">{{formatRupiah monthlyIncome}}/bulan</strong></span>
+                    <span style="font-size: 8pt; color: #94a3b8;">Surplus: <strong
+                            style="color: #10b981;">{{formatRupiah surplus}}/bulan</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Score + Net Worth Row -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <div
+                    style="width: 60px; height: 60px; border-radius: 50%; border: 5px solid #10b981; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <span
+                        style="font-size: 16pt; font-weight: 800; color: #10b981; line-height: 1;">{{healthScore}}</span>
+                    <span style="font-size: 7pt; color: #94a3b8;">dari 100</span>
+                </div>
+                <div>
+                    <div style="font-size: 7pt; color: #94a3b8;">Skor Kesehatan Finansial</div>
+                    <div style="font-size: 11pt; font-weight: 700; color: #10b981;">{{gradeText healthGrade}}</div>
+                    <div style="font-size: 8pt; color: #64748b;">Keuangan Anda dalam kondisi {{lowerCase (gradeText
+                        healthGrade)}}!</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 8pt; color: #94a3b8;">💰 Kekayaan Bersih</div>
+                <div style="font-size: 18pt; font-weight: 800; color: #1e293b;">{{formatRupiah netWorth}}</div>
+                <div style="font-size: 7pt; color: #10b981;">✓ Aset melebihi kewajiban</div>
+            </div>
+        </div>
+
+        <!-- Metric Cards Row -->
+        <div style="display: flex; gap: 12px; margin-bottom: 18px;">
+            <!-- Pendapatan -->
+            <div style="flex: 1; background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+                <div style="font-size: 8pt; color: #64748b; margin-bottom: 8px;">📈 Pendapatan Bulanan</div>
+                <div style="font-size: 14pt; font-weight: 700; color: #1e293b; margin-bottom: 4px;">{{formatRupiah
+                    monthlyIncome}}</div>
+                <div style="font-size: 7pt; color: #94a3b8;">Total penghasilan per bulan</div>
+            </div>
+            <!-- Surplus -->
+            <div style="flex: 1; background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+                <div style="font-size: 8pt; color: #64748b; margin-bottom: 8px;">📈 Surplus Bulanan</div>
+                <div style="font-size: 14pt; font-weight: 700; color: #1e293b; margin-bottom: 4px;">{{formatRupiah
+                    surplus}}</div>
+                <div style="font-size: 7pt; color: #10b981;">✓ {{percent savingsRatio}} dari pendapatan</div>
+            </div>
+            <!-- Dana Darurat -->
+            <div style="flex: 1; background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+                <div style="font-size: 8pt; color: #64748b; margin-bottom: 8px;">⏰ Dana Darurat</div>
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                    <div
+                        style="width: 35px; height: 35px; border-radius: 50%; border: 3px solid #10b981; display: flex; align-items: center; justify-content: center; font-size: 9pt; font-weight: 700; color: #10b981;">
+                        {{round emergencyFundPercent}}%</div>
+                    <div>
+                        <div style="font-size: 7pt; color: #94a3b8;">Terkumpul</div>
+                        <div style="font-size: 12pt; font-weight: 700; color: #1e293b;">{{formatRupiah
+                            emergencyFundCurrent}}</div>
+                    </div>
+                </div>
+                <div style="font-size: 7pt; color: #94a3b8;">dari {{formatRupiah emergencyFundNeeded}}</div>
+            </div>
+        </div>
+
+        <!-- Ratio Section -->
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+            <div style="font-size: 10pt; font-weight: 600; color: #1e293b; margin-bottom: 4px;">📊 Indikator Kesehatan
+                Finansial</div>
+            <div style="font-size: 8pt; color: #94a3b8; margin-bottom: 14px;">Evaluasi rasio keuangan Anda</div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <!-- Rasio Pengeluaran -->
+                <div style="background: #f8fafc; border-radius: 8px; padding: 12px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <span style="font-size: 9pt; font-weight: 600; color: #1e293b;">Rasio Pengeluaran</span>
+                        <span
+                            style="width: 18px; height: 18px; border-radius: 50%; background: {{#if (lte expenseRatio 70)}}#10b981{{else}}#f59e0b{{/if}}; color: white; font-size: 10px; display: flex; align-items: center; justify-content: center;">{{#if
+                            (lte expenseRatio 70)}}✓{{else}}!{{/if}}</span>
+                    </div>
+                    <div style="font-size: 7pt; color: #94a3b8; margin-bottom: 6px;">Target: < 70%</div>
+                            <div
+                                style="font-size: 16pt; font-weight: 800; color: {{#if (lte expenseRatio 70)}}#10b981{{else}}#f59e0b{{/if}}; margin-bottom: 6px;">
+                                {{percent expenseRatio}}</div>
+                            <div
+                                style="height: 5px; background: #e2e8f0; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+                                <div
+                                    style="height: 100%; width: {{min expenseRatio 100}}%; background: {{#if (lte expenseRatio 70)}}#10b981{{else}}#f59e0b{{/if}}; border-radius: 3px;">
+                                </div>
+                            </div>
+                            <div style="font-size: 7pt; color: #64748b;">{{#if (lte expenseRatio 70)}}Bagus! Pengeluaran
+                                terkendali.{{else}}Perlu perhatian.{{/if}}</div>
+                    </div>
+
+                    <!-- Rasio Tabungan -->
+                    <div style="background: #f8fafc; border-radius: 8px; padding: 12px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                            <span style="font-size: 9pt; font-weight: 600; color: #1e293b;">Rasio Tabungan</span>
+                            <span
+                                style="width: 18px; height: 18px; border-radius: 50%; background: {{#if (gte savingsRatio 20)}}#10b981{{else}}#f59e0b{{/if}}; color: white; font-size: 10px; display: flex; align-items: center; justify-content: center;">{{#if
+                                (gte savingsRatio 20)}}✓{{else}}!{{/if}}</span>
+                        </div>
+                        <div style="font-size: 7pt; color: #94a3b8; margin-bottom: 6px;">Target: > 20%</div>
+                        <div
+                            style="font-size: 16pt; font-weight: 800; color: {{#if (gte savingsRatio 20)}}#10b981{{else}}#f59e0b{{/if}}; margin-bottom: 6px;">
+                            {{percent savingsRatio}}</div>
+                        <div
+                            style="height: 5px; background: #e2e8f0; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+                            <div
+                                style="height: 100%; width: {{min savingsRatio 100}}%; background: {{#if (gte savingsRatio 20)}}#10b981{{else}}#f59e0b{{/if}}; border-radius: 3px;">
+                            </div>
+                        </div>
+                        <div style="font-size: 7pt; color: #64748b;">{{#if (gte savingsRatio 20)}}Bagus! {{percent
+                            savingsRatio}} ditabung.{{else}}Target minimum 20%.{{/if}}</div>
+                    </div>
+
+                    <!-- Rasio Hutang -->
+                    <div style="background: #f8fafc; border-radius: 8px; padding: 12px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                            <span style="font-size: 9pt; font-weight: 600; color: #1e293b;">Rasio Hutang</span>
+                            <span
+                                style="width: 18px; height: 18px; border-radius: 50%; background: {{#if (lte debtRatio 30)}}#10b981{{else}}#ef4444{{/if}}; color: white; font-size: 10px; display: flex; align-items: center; justify-content: center;">{{#if
+                                (lte debtRatio 30)}}✓{{else}}!{{/if}}</span>
+                        </div>
+                        <div style="font-size: 7pt; color: #94a3b8; margin-bottom: 6px;">Target: < 30%</div>
+                                <div
+                                    style="font-size: 16pt; font-weight: 800; color: {{#if (lte debtRatio 30)}}#10b981{{else}}#ef4444{{/if}}; margin-bottom: 6px;">
+                                    {{percent debtRatio}}</div>
+                                <div
+                                    style="height: 5px; background: #e2e8f0; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+                                    <div
+                                        style="height: 100%; width: {{min debtRatio 100}}%; background: {{#if (lte debtRatio 30)}}#10b981{{else}}#ef4444{{/if}}; border-radius: 3px;">
+                                    </div>
+                                </div>
+                                <div style="font-size: 7pt; color: #64748b;">{{#if (lte debtRatio 30)}}Sangat baik!
+                                    Hutang terkendali.{{else}}Kurangi hutang konsumtif.{{/if}}</div>
+                        </div>
+
+                        <!-- Rasio Solvabilitas -->
+                        <div style="background: #f8fafc; border-radius: 8px; padding: 12px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-size: 9pt; font-weight: 600; color: #1e293b;">Rasio
+                                    Solvabilitas</span>
+                                <span
+                                    style="width: 18px; height: 18px; border-radius: 50%; background: {{#if (gte solvencyRatio 50)}}#10b981{{else}}#f59e0b{{/if}}; color: white; font-size: 10px; display: flex; align-items: center; justify-content: center;">{{#if
+                                    (gte solvencyRatio 50)}}✓{{else}}!{{/if}}</span>
+                            </div>
+                            <div style="font-size: 7pt; color: #94a3b8; margin-bottom: 6px;">Target: > 50%</div>
+                            <div
+                                style="font-size: 16pt; font-weight: 800; color: {{#if (gte solvencyRatio 50)}}#10b981{{else}}#f59e0b{{/if}}; margin-bottom: 6px;">
+                                {{percent solvencyRatio}}</div>
+                            <div
+                                style="height: 5px; background: #e2e8f0; border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+                                <div
+                                    style="height: 100%; width: {{min solvencyRatio 100}}%; background: {{#if (gte solvencyRatio 50)}}#10b981{{else}}#f59e0b{{/if}}; border-radius: 3px;">
+                                </div>
+                            </div>
+                            <div style="font-size: 7pt; color: #64748b;">{{#if (gte solvencyRatio 50)}}{{percent
+                                solvencyRatio}} aset milik Anda.{{else}}Fokus pelunasan hutang.{{/if}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div
+                style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 8pt; color: #94a3b8;">
+                Youth<span style="color: #10b981;">Finance</span> - Halaman 1 dari {{totalPages}}
+            </div>
+        </div>

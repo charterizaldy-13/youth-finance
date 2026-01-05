@@ -1,0 +1,286 @@
+<!-- LAMPIRAN 1: PENDAPATAN & PENGELUARAN -->
+<div class="page" style="display: flex; min-height: 297mm; padding: 0;">
+
+    <!-- Sidebar -->
+    <div style="width: 170px; background: #e0f2f7; padding: 30px 20px; flex-shrink: 0;">
+        <div style="font-size: 18pt; font-weight: 700; color: #1e3a5f; margin-bottom: 5px;">LAMPIRAN</div>
+        <div style="font-size: 42pt; font-weight: 700; color: #10b981; line-height: 1; margin-bottom: 25px;">1</div>
+
+        <div
+            style="font-size: 9pt; color: #1e3a5f; line-height: 1.6; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+            Pos penting yang harus kamu punya: dana darurat, investasi, dan proteksi asuransi.
+        </div>
+
+        <div style="font-size: 9pt; color: #1e3a5f; line-height: 1.6;">
+            Pastikan kamu memiliki minimal 3-12 bulan pengeluaran sebagai dana darurat.
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 30px 30px;">
+
+        <!-- Pendapatan -->
+        <div style="margin-bottom: 30px;">
+            <h3 style="font-size: 14pt; font-weight: 700; color: #1e3a5f; margin-bottom: 15px;">Pendapatan Bulanan</h3>
+
+            {{#if income.gajiBulanan}}
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Gaji, Bonus dan Tunjangan</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    income.gajiBulanan}}</span>
+            </div>
+            {{/if}}
+            {{#if income.tunjanganBulanan}}
+            <div style="display: flex; justify-content: space-between; padding: 10px 12px; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Tunjangan Bulanan</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    income.tunjanganBulanan}}</span>
+            </div>
+            {{/if}}
+            {{#if income.penghasilanPasangan}}
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Penghasilan Pasangan</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    income.penghasilanPasangan}}</span>
+            </div>
+            {{/if}}
+            {{#if income.penghasilanTambahan}}
+            <div style="display: flex; justify-content: space-between; padding: 10px 12px; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Pendapatan Sampingan</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    income.penghasilanTambahan}}</span>
+            </div>
+            {{/if}}
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 12px 12px; background: #d1fae5; margin-top: 5px;">
+                <span style="font-size: 11pt; font-weight: 700; color: #059669;">Total</span>
+                <span style="font-size: 11pt; font-weight: 700; color: #059669;">{{formatRupiah monthlyIncome}}</span>
+            </div>
+        </div>
+
+        <!-- Pengeluaran -->
+        <div style="margin-bottom: 30px;">
+            <h3 style="font-size: 14pt; font-weight: 700; color: #1e3a5f; margin-bottom: 15px;">Pengeluaran Bulanan</h3>
+
+            {{#each currentExpenses}}
+            {{#if (gt this.amount 0)}}
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; {{#if (eq (mod @index 2) 0)}}background: #f8fafc;{{/if}} margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">{{this.category}}</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #ef4444;">{{formatRupiah this.amount}}</span>
+            </div>
+            {{/if}}
+            {{/each}}
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 12px 12px; background: #fee2e2; margin-top: 5px;">
+                <span style="font-size: 11pt; font-weight: 700; color: #b91c1c;">Total</span>
+                <span style="font-size: 11pt; font-weight: 700; color: #b91c1c;">{{formatRupiah monthlyExpenses}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LAMPIRAN 2: ASET & KEWAJIBAN -->
+<div class="page" style="display: flex; min-height: 297mm; padding: 0;">
+
+    <!-- Sidebar -->
+    <div style="width: 170px; background: #e0f2f7; padding: 30px 20px; flex-shrink: 0;">
+        <div style="font-size: 18pt; font-weight: 700; color: #1e3a5f; margin-bottom: 5px;">LAMPIRAN</div>
+        <div style="font-size: 42pt; font-weight: 700; color: #10b981; line-height: 1; margin-bottom: 25px;">2</div>
+
+        <div
+            style="font-size: 9pt; color: #1e3a5f; line-height: 1.6; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+            Pada usia muda, usahakan perbesar Aset Produktif dan Investasi.
+        </div>
+
+        <div style="font-size: 9pt; color: #1e3a5f; line-height: 1.6;">
+            Batasi utang-utang yang sifatnya untuk keperluan konsumtif.
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 30px 30px;">
+
+        <!-- Aset -->
+        <div style="margin-bottom: 25px;">
+            <h3 style="font-size: 14pt; font-weight: 700; color: #1e3a5f; margin-bottom: 15px;">Aset dan Kewajiban</h3>
+
+            <!-- Kas & Tabungan -->
+            <h4 style="font-size: 11pt; font-weight: 600; color: #f59e0b; margin-bottom: 10px; margin-top: 15px;">Kas &
+                Tabungan</h4>
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Tabungan Bank</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    assets.kasLikuid.tabunganBank}}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 12px; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Deposito</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    assets.kasLikuid.deposito}}</span>
+            </div>
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">E-Wallet</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    assets.kasLikuid.eWallet}}</span>
+            </div>
+
+            <!-- Investasi -->
+            <h4 style="font-size: 11pt; font-weight: 600; color: #f59e0b; margin-bottom: 10px; margin-top: 20px;">
+                Investasi</h4>
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Emas/Logam Mulia</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    assets.investasi.emas}}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 12px; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Reksadana</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    assets.investasi.reksadanaPasarUang}}</span>
+            </div>
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Saham</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    assets.investasi.sahamIndonesia}}</span>
+            </div>
+
+            <!-- Aset Riil -->
+            <h4 style="font-size: 11pt; font-weight: 600; color: #f59e0b; margin-bottom: 10px; margin-top: 20px;">Aset
+                Riil</h4>
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Properti</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    assets.asetRiil.properti}}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 12px; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Kendaraan</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #10b981;">{{formatRupiah
+                    assets.asetRiil.kendaraan}}</span>
+            </div>
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 12px 12px; background: #d1fae5; margin-top: 10px;">
+                <span style="font-size: 11pt; font-weight: 700; color: #059669;">Total Aset</span>
+                <span style="font-size: 11pt; font-weight: 700; color: #059669;">{{formatRupiah totalAssets}}</span>
+            </div>
+
+            <!-- Kewajiban -->
+            <h4 style="font-size: 11pt; font-weight: 600; color: #f59e0b; margin-bottom: 10px; margin-top: 25px;">
+                Kewajiban</h4>
+
+            {{#each debts}}
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; {{#if (eq (mod @index 2) 0)}}background: #f8fafc;{{/if}} margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">{{this.jenisHutang}}</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #ef4444;">{{formatRupiah
+                    this.totalSisaHutang}}</span>
+            </div>
+            {{/each}}
+            {{#unless debts.length}}
+            <div style="padding: 10px 12px; color: #94a3b8; font-style: italic; font-size: 10pt;">Tidak ada hutang
+                tercatat</div>
+            {{/unless}}
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 12px 12px; background: #fee2e2; margin-top: 10px;">
+                <span style="font-size: 11pt; font-weight: 700; color: #b91c1c;">Total Kewajiban</span>
+                <span style="font-size: 11pt; font-weight: 700; color: #b91c1c;">{{formatRupiah
+                    totalLiabilities}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LAMPIRAN 3: PROFIL -->
+<div class="page" style="display: flex; min-height: 297mm; padding: 0;">
+
+    <!-- Sidebar -->
+    <div style="width: 170px; background: #e0f2f7; padding: 30px 20px; flex-shrink: 0;">
+        <div style="font-size: 18pt; font-weight: 700; color: #1e3a5f; margin-bottom: 5px;">LAMPIRAN</div>
+        <div style="font-size: 42pt; font-weight: 700; color: #10b981; line-height: 1; margin-bottom: 25px;">3</div>
+
+        <div
+            style="font-size: 9pt; color: #1e3a5f; line-height: 1.6; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+            Profil keuangan yang lengkap membantu kami memberikan rekomendasi yang lebih akurat.
+        </div>
+
+        <!-- YouthFinance Branding -->
+        <div style="margin-top: 40px; text-align: center;">
+            <div
+                style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;">
+                <span style="color: white; font-weight: 700; font-size: 18pt;">Y</span>
+            </div>
+            <div style="font-size: 11pt; font-weight: 700; color: #10b981;">YouthFinance</div>
+            <div style="font-size: 8pt; color: #64748b;">financial advisor</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 30px 30px;">
+
+        <!-- Profil Pengguna -->
+        <div style="margin-bottom: 30px;">
+            <h3 style="font-size: 14pt; font-weight: 700; color: #1e3a5f; margin-bottom: 15px;">Profil Pengguna</h3>
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Nama Lengkap</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #1e3a5f;">{{personalInfo.namaLengkap}}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 12px; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Usia</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #1e3a5f;">{{personalInfo.usia}} tahun</span>
+            </div>
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Status Pernikahan</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #1e3a5f;">{{capitalize
+                    personalInfo.statusPernikahan}}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 12px; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Jumlah Tanggungan</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #1e3a5f;">{{personalInfo.jumlahTanggungan}}
+                    orang</span>
+            </div>
+        </div>
+
+        <!-- Ringkasan Laporan -->
+        <div style="margin-bottom: 30px;">
+            <h3 style="font-size: 14pt; font-weight: 700; color: #1e3a5f; margin-bottom: 15px;">Ringkasan Laporan</h3>
+
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Tanggal Laporan</span>
+                <span style="font-size: 10pt; font-weight: 500; color: #1e3a5f;">{{formatDate generatedAt}}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 10px 12px; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Skor Kesehatan</span>
+                <span style="font-size: 10pt; font-weight: 700; color: #10b981;">{{healthScore}}/100</span>
+            </div>
+            <div
+                style="display: flex; justify-content: space-between; padding: 10px 12px; background: #f8fafc; margin-bottom: 2px;">
+                <span style="font-size: 10pt; color: #374151;">Grade</span>
+                <span style="font-size: 10pt; font-weight: 700; color: #10b981;">{{healthGrade}}</span>
+            </div>
+        </div>
+
+        <!-- Report Generated By -->
+        <div style="margin-top: 50px; padding: 30px; background: #f8fafc; border-radius: 12px; text-align: center;">
+            <div style="font-size: 9pt; color: #64748b; margin-bottom: 12px;">Laporan ini dibuat dengan</div>
+            <div style="font-size: 20pt; font-weight: 700; color: #10b981; margin-bottom: 5px;">YouthFinance</div>
+            <div style="font-size: 10pt; color: #64748b;">AI-Powered Financial Advisor</div>
+            <div style="font-size: 9pt; color: #94a3b8; margin-top: 15px;">youthfinance.app</div>
+        </div>
+    </div>
+</div>

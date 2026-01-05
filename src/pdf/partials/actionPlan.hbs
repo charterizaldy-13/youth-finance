@@ -1,0 +1,123 @@
+<!-- HALAMAN 4: RENCANA AKSI -->
+<div class="page" style="display: flex; min-height: 297mm;">
+    <!-- Sidebar -->
+    <div style="width: 150px; background: #1a2332; padding: 22px 18px; flex-shrink: 0;">
+        <div
+            style="display: inline-block; background: #243044; padding: 6px 10px; border-radius: 5px; font-size: 9pt; font-weight: 600; color: white; margin-bottom: 25px;">
+            Youth<span style="color: #10b981;">Finance</span></div>
+        <div
+            style="width: 40px; height: 40px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: 700; color: white; margin-bottom: 12px;">
+            3</div>
+        <div style="font-size: 18pt; font-weight: 800; color: white; line-height: 1.2;">Rencana Aksi</div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 22px 25px; background: white; position: relative;">
+        <div style="position: absolute; top: 12px; right: 22px; font-size: 9pt; color: #94a3b8;">Youth <span
+                style="color: #10b981;">Finance</span></div>
+
+        <!-- Section Header -->
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 18px;">
+            <span style="font-size: 14px;">📋</span>
+            <h2 style="font-size: 12pt; font-weight: 700; color: #1e293b;">Rencana Aksi</h2>
+        </div>
+
+        {{#if actionPlan.shortTerm.length}}
+        <!-- Jangka Pendek -->
+        <div style="margin-bottom: 22px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+                <span style="font-size: 14px; color: #f59e0b;">⏱</span>
+                <span style="font-size: 10pt; font-weight: 600; color: #1e293b;">Jangka Pendek (0-3 Bulan)</span>
+                <span
+                    style="display: inline-block; background: #fee2e2; color: #991b1b; font-size: 7pt; font-weight: 600; padding: 2px 8px; border-radius: 3px;">Prioritas
+                    Tinggi</span>
+            </div>
+
+            {{#each actionPlan.shortTerm}}
+            <div style="background: #f8fafc; border-radius: 8px; padding: 14px; margin-bottom: 10px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                    <span style="font-size: 8pt; color: #94a3b8;">{{add @index 1}} Aksi #{{add @index 1}}</span>
+                    {{#if this.amount}}
+                    <div style="text-align: right;">
+                        <span style="font-size: 7pt; color: #94a3b8;">Target</span>
+                        <div style="font-size: 10pt; font-weight: 700; color: #10b981;">{{formatRupiah this.amount}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+                <div style="font-size: 10pt; font-weight: 600; color: #1e293b; margin-bottom: 6px;">{{this.action}}
+                </div>
+                <div style="font-size: 8pt; color: #94a3b8;">⏱ Selesaikan dalam 0-3 bulan</div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if actionPlan.midTerm.length}}
+        <!-- Jangka Menengah -->
+        <div style="margin-bottom: 22px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+                <span style="font-size: 14px; color: #3b82f6;">⏱</span>
+                <span style="font-size: 10pt; font-weight: 600; color: #1e293b;">Jangka Menengah (3-12 Bulan)</span>
+                <span
+                    style="display: inline-block; background: #dbeafe; color: #1e40af; font-size: 7pt; font-weight: 600; padding: 2px 8px; border-radius: 3px;">Pengembangan</span>
+            </div>
+
+            {{#each actionPlan.midTerm}}
+            <div style="background: #f8fafc; border-radius: 8px; padding: 14px; margin-bottom: 10px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                    <span style="font-size: 8pt; color: #94a3b8;">{{add @index 1}} Aksi #{{add @index 1}}</span>
+                    {{#if this.amount}}
+                    <div style="text-align: right;">
+                        <span style="font-size: 7pt; color: #94a3b8;">Target</span>
+                        <div style="font-size: 10pt; font-weight: 700; color: #10b981;">{{formatRupiah this.amount}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+                <div style="font-size: 10pt; font-weight: 600; color: #1e293b; margin-bottom: 6px;">{{this.action}}
+                </div>
+                <div style="font-size: 8pt; color: #94a3b8;">⏱ Selesaikan dalam 3-12 bulan</div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if actionPlan.longTerm.length}}
+        <!-- Jangka Panjang -->
+        <div style="margin-bottom: 22px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+                <span style="font-size: 14px; color: #10b981;">⏱</span>
+                <span style="font-size: 10pt; font-weight: 600; color: #1e293b;">Jangka Panjang (>12 Bulan)</span>
+                <span
+                    style="display: inline-block; background: #dcfce7; color: #166534; font-size: 7pt; font-weight: 600; padding: 2px 8px; border-radius: 3px;">Visi
+                    Masa Depan</span>
+            </div>
+
+            {{#each actionPlan.longTerm}}
+            <div style="background: #f8fafc; border-radius: 8px; padding: 14px; margin-bottom: 10px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                    <span style="font-size: 8pt; color: #94a3b8;">{{add @index 1}} Aksi #{{add @index 1}}</span>
+                    {{#if this.amount}}
+                    <div style="text-align: right;">
+                        <span style="font-size: 7pt; color: #94a3b8;">Target</span>
+                        <div style="font-size: 10pt; font-weight: 700; color: #10b981;">{{formatRupiah this.amount}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+                <div style="font-size: 10pt; font-weight: 600; color: #1e293b; margin-bottom: 6px;">{{this.action}}
+                </div>
+                <div style="font-size: 8pt; color: #94a3b8;">⏱ Target pencapaian >12 bulan</div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- Footer -->
+        <div
+            style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 8pt; color: #94a3b8;">
+            Youth<span style="color: #10b981;">Finance</span> - Halaman 4 dari {{totalPages}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+<!-- HALAMAN 6: TUJUAN KEUANGAN & INVESTASI -->
+<div class="page" style="display: flex; min-height: 297mm;">
+    <!-- Sidebar -->
+    <div style="width: 150px; background: #1a2332; padding: 22px 18px; flex-shrink: 0;">
+        <div
+            style="display: inline-block; background: #243044; padding: 6px 10px; border-radius: 5px; font-size: 9pt; font-weight: 600; color: white; margin-bottom: 25px;">
+            Youth<span style="color: #10b981;">Finance</span></div>
+        <div
+            style="width: 40px; height: 40px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: 700; color: white; margin-bottom: 12px;">
+            5</div>
+        <div style="font-size: 18pt; font-weight: 800; color: white; line-height: 1.2;">Tujuan Keuangan & Investasi
+        </div>
+        <div style="width: 25px; height: 2px; background: rgba(255,255,255,0.3); margin: 18px 0;"></div>
+        <div style="font-size: 8pt; color: rgba(255,255,255,0.7); line-height: 1.5;">
+            <strong style="color: #10b981;">Catatan:</strong><br><br>
+            "Tujuan Keuangan" adalah dana untuk target spesifik (menikah, rumah, pendidikan).<br><br>
+            "Investasi" adalah alokasi pertumbuhan kekayaan jangka panjang.
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 22px 25px; background: white; position: relative;">
+        <div style="position: absolute; top: 12px; right: 22px; font-size: 9pt; color: #94a3b8;">Youth <span
+                style="color: #10b981;">Finance</span></div>
+
+        <!-- Section Header -->
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+            <span style="font-size: 14px; color: #10b981;">✓</span>
+            <h2 style="font-size: 12pt; font-weight: 700; color: #1e293b;">Tujuan Keuangan Anda</h2>
+        </div>
+        <p style="font-size: 8pt; color: #94a3b8; margin-bottom: 16px;">Pantau perkembangan setiap tujuan finansial Anda
+        </p>
+
+        <!-- Goals Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
+            {{#each financialGoals}}
+            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                    <div>
+                        <div style="font-size: 10pt; font-weight: 700; color: #1e293b;">{{this.name}}</div>
+                        <div style="font-size: 7pt; color: #94a3b8;">{{this.timeframe}} • {{this.priority}}</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 11pt; font-weight: 700; color: #10b981;">{{round this.progressPercent}}%
+                        </div>
+                        <div style="font-size: 7pt; color: #94a3b8;">tercapai</div>
+                    </div>
+                </div>
+
+                <div
+                    style="height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; margin-bottom: 10px;">
+                    <div
+                        style="height: 100%; width: {{min this.progressPercent 100}}%; background: #10b981; border-radius: 3px;">
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <div>
+                        <div style="font-size: 7pt; color: #94a3b8;">Target</div>
+                        <div style="font-size: 10pt; font-weight: 700; color: #1e293b;">{{formatRupiah
+                            this.targetAmount}}</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 7pt; color: #94a3b8;">Terkumpul</div>
+                        <div style="font-size: 10pt; font-weight: 700; color: #1e293b;">{{formatRupiah
+                            this.currentAmount}}</div>
+                    </div>
+                </div>
+
+                <div
+                    style="background: #f8fafc; border-radius: 5px; padding: 8px 10px; font-size: 7pt; color: #64748b; line-height: 1.4;">
+                    <strong style="color: #10b981;">✓</strong> Alokasi: <strong style="color: #10b981;">{{formatRupiah
+                        this.monthlyAllocation}}/bulan</strong>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Investment Recommendations -->
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                <span style="font-size: 14px; color: #10b981;">💰</span>
+                <h3 style="font-size: 11pt; font-weight: 700; color: #1e293b;">Rekomendasi Investasi</h3>
+            </div>
+            <p style="font-size: 8pt; color: #94a3b8; margin-bottom: 14px;">Alokasi portofolio berdasarkan profil risiko
+                Anda</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div
+                    style="background: #f8fafc; border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 10px;">
+                    <div
+                        style="width: 36px; height: 36px; border-radius: 50%; background: #10b981; display: flex; align-items: center; justify-content: center; font-size: 10pt; font-weight: 700; color: white;">
+                        {{investmentAllocation.deposito}}%</div>
+                    <div>
+                        <div style="font-size: 9pt; font-weight: 600; color: #1e293b;">Tabungan/Deposito</div>
+                        <div style="font-size: 7pt; color: #94a3b8;">Prioritas dana darurat</div>
+                        <div style="font-size: 7pt; color: #10b981;">Return: 3-5%/tahun</div>
+                    </div>
+                </div>
+
+                <div
+                    style="background: #f8fafc; border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 10px;">
+                    <div
+                        style="width: 36px; height: 36px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 10pt; font-weight: 700; color: white;">
+                        {{investmentAllocation.reksadana}}%</div>
+                    <div>
+                        <div style="font-size: 9pt; font-weight: 600; color: #1e293b;">Reksadana Pasar Uang</div>
+                        <div style="font-size: 7pt; color: #94a3b8;">Likuid dan stabil</div>
+                        <div style="font-size: 7pt; color: #10b981;">Return: 4-6%/tahun</div>
+                    </div>
+                </div>
+
+                {{#if investmentAllocation.saham}}
+                <div
+                    style="background: #f8fafc; border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 10px;">
+                    <div
+                        style="width: 36px; height: 36px; border-radius: 50%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 10pt; font-weight: 700; color: white;">
+                        {{investmentAllocation.saham}}%</div>
+                    <div>
+                        <div style="font-size: 9pt; font-weight: 600; color: #1e293b;">Saham/Reksadana Saham</div>
+                        <div style="font-size: 7pt; color: #94a3b8;">Pertumbuhan jangka panjang</div>
+                        <div style="font-size: 7pt; color: #10b981;">Return: 8-15%/tahun</div>
+                    </div>
+                </div>
+                {{/if}}
+
+                {{#if investmentAllocation.obligasi}}
+                <div
+                    style="background: #f8fafc; border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 10px;">
+                    <div
+                        style="width: 36px; height: 36px; border-radius: 50%; background: #8b5cf6; display: flex; align-items: center; justify-content: center; font-size: 10pt; font-weight: 700; color: white;">
+                        {{investmentAllocation.obligasi}}%</div>
+                    <div>
+                        <div style="font-size: 9pt; font-weight: 600; color: #1e293b;">Obligasi/SBN</div>
+                        <div style="font-size: 7pt; color: #94a3b8;">Pendapatan tetap</div>
+                        <div style="font-size: 7pt; color: #10b981;">Return: 5-8%/tahun</div>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div
+            style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 8pt; color: #94a3b8;">
+            Youth<span style="color: #10b981;">Finance</span> - Halaman 6 dari {{totalPages}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+<!-- HALAMAN 2: DIAGNOSIS & PRIORITAS MASALAH -->
+<div class="page" style="display: flex; min-height: 297mm;">
+    <!-- Sidebar -->
+    <div style="width: 150px; background: #1a2332; padding: 22px 18px; flex-shrink: 0;">
+        <div
+            style="display: inline-block; background: #243044; padding: 6px 10px; border-radius: 5px; font-size: 9pt; font-weight: 600; color: white; margin-bottom: 25px;">
+            Youth<span style="color: #10b981;">Finance</span></div>
+        <div
+            style="width: 40px; height: 40px; background: #f97316; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: 700; color: white; margin-bottom: 12px;">
+            1</div>
+        <div style="font-size: 18pt; font-weight: 800; color: white; line-height: 1.2;">Diagnosis & Prioritas Masalah
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 22px 25px; background: white; position: relative;">
+        <div style="position: absolute; top: 12px; right: 22px; font-size: 9pt; color: #94a3b8;">Youth <span
+                style="color: #10b981;">Finance</span></div>
+
+        <!-- Diagnosis Section -->
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <span style="font-size: 14px; color: #f59e0b;">⚠</span>
+            <h2 style="font-size: 12pt; font-weight: 700; color: #1e293b;">Diagnosis Keuangan</h2>
+        </div>
+
+        {{#if diagnosis.falseSecurities.length}}
+        <div style="margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 12px;">
+                <span style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%;"></span>
+                <span style="font-size: 10pt; font-weight: 600; color: #f59e0b;">Rasa Aman Palsu</span>
+                <span style="font-size: 8pt; color: #94a3b8;">{{diagnosis.falseSecurities.length}} temuan</span>
+            </div>
+
+            {{#each diagnosis.falseSecurities}}
+            <div
+                style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-bottom: 10px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <div
+                        style="width: 22px; height: 22px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10pt; font-weight: 600; color: white;">
+                        {{add @index 1}}</div>
+                    <div style="font-size: 10pt; font-weight: 700; color: #f59e0b;">{{this.issue}}</div>
+                </div>
+                <p style="font-size: 9pt; color: #64748b; line-height: 1.5; margin-bottom: 8px;">{{this.impact}}</p>
+                {{#if this.evidence}}
+                <div style="background: #fef3c7; padding: 8px 12px; border-radius: 5px;">
+                    <div style="font-size: 8pt; font-weight: 600; color: #f59e0b; margin-bottom: 2px;">📊 Bukti:</div>
+                    <div style="font-size: 8pt; color: #92400e;">{{this.evidence}}</div>
+                </div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if diagnosis.weaknesses.length}}
+        <div style="margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 12px;">
+                <span style="width: 8px; height: 8px; background: #ef4444; border-radius: 50%;"></span>
+                <span style="font-size: 10pt; font-weight: 600; color: #ef4444;">Kelemahan</span>
+                <span style="font-size: 8pt; color: #94a3b8;">{{diagnosis.weaknesses.length}} temuan</span>
+            </div>
+
+            {{#each diagnosis.weaknesses}}
+            <div
+                style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-bottom: 10px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <div
+                        style="width: 22px; height: 22px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10pt; font-weight: 600; color: white;">
+                        {{add @index 1}}</div>
+                    <div style="font-size: 10pt; font-weight: 700; color: #ef4444;">{{this.issue}}</div>
+                </div>
+                <p style="font-size: 9pt; color: #64748b; line-height: 1.5;">{{this.impact}}</p>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- Prioritas Masalah Section -->
+        <div style="display: flex; align-items: center; gap: 8px; margin-top: 22px; margin-bottom: 16px;">
+            <span style="font-size: 14px; color: #ef4444;">⊕</span>
+            <h2 style="font-size: 12pt; font-weight: 700; color: #1e293b;">Prioritas Masalah</h2>
+        </div>
+
+        {{#if optimizationIssues.length}}
+        <div style="margin-bottom: 14px;">
+            <span
+                style="display: inline-block; background: #dbeafe; color: #1e40af; font-size: 7pt; font-weight: 600; padding: 3px 8px; border-radius: 3px;">OPTIMISASI</span>
+            <span style="font-size: 8pt; color: #94a3b8; margin-left: 6px;">Setelah fondasi stabil</span>
+        </div>
+
+        {{#each optimizationIssues}}
+        <div style="display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span style="font-size: 10pt; font-weight: 700; color: #10b981; margin-right: 10px;">{{this.rank}}.</span>
+            <div style="flex: 1;">
+                <div style="font-size: 10pt; font-weight: 600; color: #10b981; margin-bottom: 2px;">{{this.issue}}</div>
+                <div style="font-size: 8pt; color: #64748b; margin-bottom: 4px;">{{this.shortExplanation}}</div>
+                {{#if this.context}}
+                <div style="font-size: 7pt; color: #f59e0b;">⚠ {{this.context}}</div>
+                {{/if}}
+            </div>
+            {{#if this.financialImpact}}
+            <div style="text-align: right;">
+                <div style="font-size: 7pt; color: #94a3b8;">Estimasi Kebutuhan</div>
+                <div style="font-size: 10pt; font-weight: 700; color: #1e293b;">{{formatRupiah this.financialImpact}}
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        {{/each}}
+        {{/if}}
+
+        {{#if criticalIssues.length}}
+        <div style="margin-top: 16px; margin-bottom: 14px;">
+            <span
+                style="display: inline-block; background: #fee2e2; color: #991b1b; font-size: 7pt; font-weight: 600; padding: 3px 8px; border-radius: 3px;">KRITIS</span>
+            <span style="font-size: 8pt; color: #94a3b8; margin-left: 6px;">Harus segera ditangani</span>
+        </div>
+
+        {{#each criticalIssues}}
+        <div style="display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+            <span style="font-size: 10pt; font-weight: 700; color: #ef4444; margin-right: 10px;">{{this.rank}}.</span>
+            <div style="flex: 1;">
+                <div style="font-size: 10pt; font-weight: 600; color: #ef4444; margin-bottom: 2px;">{{this.issue}}</div>
+                <div style="font-size: 8pt; color: #64748b;">{{this.shortExplanation}}</div>
+            </div>
+            {{#if this.financialImpact}}
+            <div style="text-align: right;">
+                <div style="font-size: 7pt; color: #94a3b8;">Estimasi Kebutuhan</div>
+                <div style="font-size: 10pt; font-weight: 700; color: #ef4444;">{{formatRupiah this.financialImpact}}
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        {{/each}}
+        {{/if}}
+
+        <!-- Footer -->
+        <div
+            style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 8pt; color: #94a3b8;">
+            Youth<span style="color: #10b981;">Finance</span> - Halaman 2 dari {{totalPages}}
+        </div>
+    </div>
+</div>

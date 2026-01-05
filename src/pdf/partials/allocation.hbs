@@ -1,0 +1,86 @@
+<!-- HALAMAN 5: ALOKASI KEUANGAN -->
+<div class="page" style="display: flex; min-height: 297mm;">
+    <!-- Sidebar -->
+    <div style="width: 150px; background: #1a2332; padding: 22px 18px; flex-shrink: 0;">
+        <div
+            style="display: inline-block; background: #243044; padding: 6px 10px; border-radius: 5px; font-size: 9pt; font-weight: 600; color: white; margin-bottom: 25px;">
+            Youth<span style="color: #10b981;">Finance</span></div>
+        <div
+            style="width: 40px; height: 40px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: 700; color: white; margin-bottom: 12px;">
+            4</div>
+        <div style="font-size: 18pt; font-weight: 800; color: white; line-height: 1.2;">Alokasi Keuangan</div>
+        <div style="width: 25px; height: 2px; background: rgba(255,255,255,0.3); margin: 18px 0;"></div>
+        <div style="font-size: 8pt; color: rgba(255,255,255,0.7); font-style: italic; line-height: 1.5;">
+            "Berdasarkan perhitungan yang disesuaikan dengan kebutuhan dan keinginan Anda"
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 22px 25px; background: white; position: relative;">
+        <div style="position: absolute; top: 12px; right: 22px; font-size: 9pt; color: #94a3b8;">Youth <span
+                style="color: #10b981;">Finance</span></div>
+
+        <!-- Section Header -->
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 18px;">
+            <span style="font-size: 14px; color: #3b82f6;">📈</span>
+            <h2 style="font-size: 12pt; font-weight: 700; color: #1e293b;">Perbandingan Alokasi Keuangan</h2>
+        </div>
+
+        <!-- Pengeluaran Saat Ini -->
+        <div
+            style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px; margin-bottom: 16px;">
+            <div
+                style="display: flex; align-items: center; gap: 8px; font-size: 11pt; font-weight: 700; color: #1e293b; margin-bottom: 14px;">
+                <span style="font-size: 14px;">📊</span>
+                Pengeluaran Saat Ini
+            </div>
+
+            {{#each currentExpenses}}
+            <div style="display: flex; align-items: center; padding: 7px 0;">
+                <span
+                    style="width: 8px; height: 8px; border-radius: 50%; background: {{expenseDotColor @index}}; margin-right: 10px;"></span>
+                <span style="flex: 1; font-size: 9pt; color: #64748b;">{{this.category}}</span>
+                <span style="font-size: 9pt; font-weight: 600; color: #1e293b;">{{formatRupiah this.amount}}</span>
+            </div>
+            {{/each}}
+
+            <div
+                style="display: flex; justify-content: space-between; padding-top: 10px; margin-top: 8px; border-top: 1px solid #e2e8f0;">
+                <span style="font-size: 10pt; font-weight: 700; color: #1e293b;">Total:</span>
+                <span style="font-size: 10pt; font-weight: 700; color: #1e293b;">{{formatRupiah
+                    monthlyExpenses}}/bulan</span>
+            </div>
+        </div>
+
+        <!-- Alokasi Rekomendasi -->
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px;">
+            <div
+                style="display: flex; align-items: center; gap: 8px; font-size: 11pt; font-weight: 700; color: #1e293b; margin-bottom: 14px;">
+                <span style="font-size: 14px;">✨</span>
+                Alokasi Rekomendasi
+            </div>
+
+            {{#each recommendedAllocation}}
+            <div style="display: flex; align-items: center; padding: 7px 0;">
+                <span
+                    style="width: 8px; height: 8px; border-radius: 50%; background: {{expenseDotColor @index}}; margin-right: 10px;"></span>
+                <span style="flex: 1; font-size: 9pt; color: #64748b;">{{this.category}}</span>
+                <span style="font-size: 9pt; font-weight: 600; color: #1e293b;">{{formatRupiah this.amount}}</span>
+            </div>
+            {{/each}}
+
+            <div
+                style="display: flex; justify-content: space-between; padding-top: 10px; margin-top: 8px; border-top: 1px solid #e2e8f0;">
+                <span style="font-size: 10pt; font-weight: 700; color: #10b981;">Total Pendapatan:</span>
+                <span style="font-size: 10pt; font-weight: 700; color: #10b981;">{{formatRupiah
+                    monthlyIncome}}/bulan</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div
+            style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 8pt; color: #94a3b8;">
+            Youth<span style="color: #10b981;">Finance</span> - Halaman 5 dari {{totalPages}}
+        </div>
+    </div>
+</div>

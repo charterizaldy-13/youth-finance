@@ -1,0 +1,89 @@
+<!-- HALAMAN 3: STRATEGI YANG DIREKOMENDASIKAN -->
+<div class="page" style="display: flex; min-height: 297mm;">
+    <!-- Sidebar -->
+    <div style="width: 150px; background: #1a2332; padding: 22px 18px; flex-shrink: 0;">
+        <div
+            style="display: inline-block; background: #243044; padding: 6px 10px; border-radius: 5px; font-size: 9pt; font-weight: 600; color: white; margin-bottom: 25px;">
+            Youth<span style="color: #10b981;">Finance</span></div>
+        <div
+            style="width: 40px; height: 40px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: 700; color: white; margin-bottom: 12px;">
+            2</div>
+        <div style="font-size: 18pt; font-weight: 800; color: white; line-height: 1.2;">Strategi yang Direkomendasikan
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex: 1; padding: 22px 25px; background: white; position: relative;">
+        <div style="position: absolute; top: 12px; right: 22px; font-size: 9pt; color: #94a3b8;">Youth <span
+                style="color: #10b981;">Finance</span></div>
+
+        {{#each strategies}}
+        <div
+            style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; margin-bottom: 18px;">
+            <!-- Strategy Header -->
+            <div style="background: #10b981; padding: 12px 18px; display: flex; align-items: center; gap: 10px;">
+                <div
+                    style="width: 22px; height: 22px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10pt; font-weight: 700; color: white;">
+                    {{this.priority}}</div>
+                <div>
+                    <div style="font-size: 11pt; font-weight: 700; color: white;">{{this.strategyName}}</div>
+                    <div style="font-size: 8pt; color: rgba(255,255,255,0.8);">{{this.objective}}</div>
+                </div>
+            </div>
+
+            <!-- Strategy Body -->
+            <div style="padding: 16px 18px;">
+                <!-- Metrics Row -->
+                <div
+                    style="display: flex; border-bottom: 1px solid #e2e8f0; margin-bottom: 14px; padding-bottom: 12px;">
+                    <div style="flex: 1; padding-right: 18px; border-right: 1px solid #e2e8f0;">
+                        <div style="font-size: 7pt; color: #94a3b8; margin-bottom: 2px;">Target</div>
+                        <div style="font-size: 12pt; font-weight: 700; color: #10b981;">{{formatRupiah
+                            this.targetAmount}}</div>
+                    </div>
+                    <div style="flex: 1; padding-left: 18px;">
+                        <div style="font-size: 7pt; color: #94a3b8; margin-bottom: 2px;">Timeframe</div>
+                        <div style="font-size: 12pt; font-weight: 700; color: #10b981;">{{this.timeframe}}</div>
+                    </div>
+                </div>
+
+                <!-- Langkah Spesifik -->
+                {{#if this.specificActions.length}}
+                <div style="margin-bottom: 14px;">
+                    <div style="font-size: 9pt; font-weight: 600; color: #1e293b; margin-bottom: 8px;">Langkah Spesifik:
+                    </div>
+                    {{#each this.specificActions}}
+                    <div
+                        style="display: flex; align-items: flex-start; font-size: 9pt; color: #64748b; margin-bottom: 5px; line-height: 1.4;">
+                        <span style="color: #94a3b8; margin-right: 6px;">•</span>
+                        {{this}}
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                <!-- Pertimbangan -->
+                {{#if this.tradeOffs.length}}
+                <div style="background: #fff7ed; border-radius: 6px; padding: 10px 14px;">
+                    <div style="font-size: 8pt; font-weight: 600; color: #f97316; margin-bottom: 6px;">Pertimbangan:
+                    </div>
+                    {{#each this.tradeOffs}}
+                    <div
+                        style="display: flex; align-items: flex-start; font-size: 8pt; color: #ea580c; margin-bottom: 3px;">
+                        <span style="margin-right: 6px;">⚠</span>
+                        {{this}}
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+
+        <!-- Footer -->
+        <div
+            style="position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 8pt; color: #94a3b8;">
+            Youth<span style="color: #10b981;">Finance</span> - Halaman 3 dari {{totalPages}}
+        </div>
+    </div>
+</div>

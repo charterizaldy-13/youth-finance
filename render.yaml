@@ -1,0 +1,20 @@
+# Render.com Blueprint Configuration
+# This file tells Render how to deploy the YouthFinance backend
+
+services:
+  - type: web
+    name: youthfinance-api
+    runtime: node
+    buildCommand: npm install && npm install puppeteer
+    startCommand: node server/index.cjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
+        value: false
+      - key: PUPPETEER_EXECUTABLE_PATH
+        value: /usr/bin/google-chrome-stable
+    # Use Docker for Puppeteer support
+    dockerfilePath: ./Dockerfile
